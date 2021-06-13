@@ -1,0 +1,16 @@
+<%# postsコントローラーからindexアクションを実行する時に表示するページデザイン %>
+<h1>トップページ</h1>
+<%= link_to '新規投稿', '/posts/new' %>
+<%#「新規投稿」と表示されたリンク。リンク先は「/posts/new'」%>
+<% @posts.each do |post| %>
+<%# インスタンス変数「@posts」のテーブルの数と同じ回数表示処理を行う %>
+  <div class="post">
+    <div class="post-date">
+      投稿日時：<%= post.created_at %>
+    </div>
+    <div class="post-content">
+      <%= post.content %>
+      <%# 本文であるcontentカラムを表示 %>
+    </div>
+  </div>
+<% end %>

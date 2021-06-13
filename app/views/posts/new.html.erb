@@ -1,0 +1,8 @@
+<%# postsページでnewアクションを実行=新規投稿ボタンをクリックしたときの表示ページ %>
+<h1>新規投稿ページ</h1>
+<%= form_with url: "/posts", method: :post, local: true do |form| %>
+<%# フォームのヘルパーメソッド。入力データの送信先URL:「/posts」、処理:送信 %>
+  <%= form.text_field :content %>
+  <%# 文章入力欄。ここに入力された内容を、paramsのcontentキーに保存する %>
+  <%= form.submit '投稿する' %>
+<% end %>
